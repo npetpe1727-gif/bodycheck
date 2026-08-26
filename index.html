@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="나의 건강 지표를 간편하게 계산해 보세요." />
+    <title>나의 건강 지표 계산기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">MY WELLNESS CHECK</p>
+        <h1 id="page-title">나의 건강 지표 계산기</h1>
+        <p>내 신체 수치로 건강 지표를 간편하게 확인해 보세요.</p>
+      </section>
+
+      <section class="calculator-card" aria-label="건강 지표 계산">
+        <div class="tabs" role="tablist" aria-label="계산 항목">
+          <button class="tab is-active" id="tab-obesity" role="tab" aria-selected="true" aria-controls="panel-obesity" data-tab="obesity">비만도</button>
+          <button class="tab" id="tab-bmi" role="tab" aria-selected="false" aria-controls="panel-bmi" data-tab="bmi">BMI</button>
+          <button class="tab" id="tab-whr" role="tab" aria-selected="false" aria-controls="panel-whr" data-tab="whr">복부비만도</button>
+        </div>
+
+        <div class="tab-panels">
+          <section class="tab-panel is-active" id="panel-obesity" role="tabpanel" aria-labelledby="tab-obesity">
+            <div class="panel-heading"><span class="icon">⚖️</span><div><h2>표준체중과 비만도</h2><p>신장과 현재 체중을 입력해 주세요.</p></div></div>
+            <form id="obesity-form" novalidate>
+              <div class="input-grid">
+                <label>신장 <span class="unit">cm</span><input id="obesity-height" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 170" required /></label>
+                <label>현재 체중 <span class="unit">kg</span><input id="obesity-weight" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 65" required /></label>
+              </div>
+              <button class="calculate-button" type="submit">계산하기</button>
+            </form>
+            <div class="result" id="obesity-result" aria-live="polite" hidden></div>
+          </section>
+
+          <section class="tab-panel" id="panel-bmi" role="tabpanel" aria-labelledby="tab-bmi" hidden>
+            <div class="panel-heading"><span class="icon">📊</span><div><h2>체질량 지수 (BMI)</h2><p>신장과 체중을 입력해 주세요.</p></div></div>
+            <form id="bmi-form" novalidate>
+              <div class="input-grid">
+                <label>신장 <span class="unit">cm</span><input id="bmi-height" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 170" required /></label>
+                <label>체중 <span class="unit">kg</span><input id="bmi-weight" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 65" required /></label>
+              </div>
+              <button class="calculate-button" type="submit">계산하기</button>
+            </form>
+            <div class="result" id="bmi-result" aria-live="polite" hidden></div>
+          </section>
+
+          <section class="tab-panel" id="panel-whr" role="tabpanel" aria-labelledby="tab-whr" hidden>
+            <div class="panel-heading"><span class="icon">📏</span><div><h2>허리 엉덩이 둘레비 (WHR)</h2><p>허리와 엉덩이 둘레를 입력해 주세요.</p></div></div>
+            <form id="whr-form" novalidate>
+              <div class="input-grid">
+                <label>허리 둘레 <span class="unit">cm</span><input id="waist" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 75" required /></label>
+                <label>엉덩이 둘레 <span class="unit">cm</span><input id="hip" type="number" inputmode="decimal" min="1" step="0.1" placeholder="예: 95" required /></label>
+              </div>
+              <fieldset class="gender-field">
+                <legend>성별 <span class="unit">WHR 참고 구간 선택</span></legend>
+                <label><input type="radio" name="gender" value="female" checked /> 여성</label>
+                <label><input type="radio" name="gender" value="male" /> 남성</label>
+              </fieldset>
+              <button class="calculate-button" type="submit">계산하기</button>
+            </form>
+            <div class="result" id="whr-result" aria-live="polite" hidden></div>
+          </section>
+        </div>
+      </section>
+
+      <p class="notice">※ 계산 결과는 건강 상태를 가늠하기 위한 참고용이며, 의학적 진단을 대체하지 않습니다.</p>
+    </main>
+  </body>
+</html>
