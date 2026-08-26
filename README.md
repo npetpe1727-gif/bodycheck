@@ -1,8 +1,8 @@
 [README.md](https://github.com/user-attachments/files/31445873/README.md)
-# 📄 웹앱 기획 및 과제 제출 문서 (설명서 & PRD)
+# 📄 웹앱 기획 및 과제 제출 문서 (PRD)
 
 ---
-## 📑 파트 2: PRD (제품 요구사항 정의서)
+## 📑 PRD (제품 요구사항 정의서)
 
 ### 1. 프로젝트 개요 (Project Overview)
 * **프로젝트명:** 나의 건강 지표 계산기 (My Health Metrics Calculator)
